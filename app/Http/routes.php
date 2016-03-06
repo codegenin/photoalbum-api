@@ -39,6 +39,9 @@ Route::group(['middleware' => 'web'], function () {
 Route::model('albums', App\Album::class);
 
 Route::group(['middleware' => 'api', 'prefix' => '/api/v1', 'namespace' => 'Api\V1'], function ($route) {
+    $route->get('/', function () {
+        return response()->json('Hi there!');
+    });
     $route->post('/login', 'UsersController@login');
     $route->post('/register', 'UsersController@register');
     Route::group(['middleware' => 'jwt.auth'], function ($route) {
