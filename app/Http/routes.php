@@ -47,6 +47,7 @@ Route::group(['middleware' => 'api', 'prefix' => '/api/v1', 'namespace' => 'Api\
     $route->post('/register', 'UsersController@register');
     Route::group(['middleware' => 'jwt.auth'], function ($route) {
         $route->get('/profile', 'UsersController@profile');
+        $route->get('/sync', 'SyncController@sync');
         $route->resource('albums', 'AlbumsController', ['only' => ['index', 'store', 'show', 'update', 'destroy']]);
         $route->resource('albums.pictures', 'PicturesController');
     });

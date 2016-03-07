@@ -67,6 +67,12 @@ To use authenticated endpoints, user must login / register using the API above. 
         <td></td>
     </tr>
     <tr>
+        <td>GET /api/v1/sync?last_sync={timestamp}</td>
+        <td></td>
+        <td>Array of objects changed sync last sync</td>
+        <td>timestamp is formatted in Unix Timestamp e.g.: 1457380303</td>
+    </tr>
+    <tr>
         <th colspan="4">ALBUMS</th>
     </tr>
     <tr>
