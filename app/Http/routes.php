@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::model('albums', App\Album::class);
+Route::model('pictures', App\Picture::class);
 
 Route::group(['middleware' => 'api', 'prefix' => '/api/v1', 'namespace' => 'Api\V1'], function ($route) {
     $route->get('/', function () {
